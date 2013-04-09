@@ -3,5 +3,15 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/nav.css')
   body
+        div#contenedor_links
+            div#nav_links        
+                ul.links
+                    li.first
+                        a(title='Foro grupo', target='_blank', href='https://groups.google.com/forum/#!forum/obanode') Foro
+                    li
+                        a(title='Github', target='_blank', href='https://github.com/obanode/node_template') Github
+                    li.last
+                        a(title='Ajchambeaud', target='_blank', href='http://www.ajchambeaud.com/') Ainu Jorge Chambeaud Helguera
     block content
