@@ -25,7 +25,7 @@ var app = express();
  
 app.configure(function(){
     app.set('port', process.env.PORT || config.Default.port);
-    app.set('views', __dirname + config.Default.views);
+    app.set('views', path.join(__dirname, config.Default.views));
     app.set('view engine', config.Default.engine);
     app.use(express.favicon());
     app.use(express.logger(config.Default.logger_mode));
