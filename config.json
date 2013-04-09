@@ -1,0 +1,12 @@
+{
+    "Default": {
+        "port": 3000,
+        "views": "/views",
+        "engine": "jade",
+        "logger_mode": "dev"
+    },
+    
+    "Example": {
+        "a": "a"
+    }
+}

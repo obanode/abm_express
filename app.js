@@ -9,7 +9,7 @@ var express = require('express')
 , http = require('http')
 , path = require('path')
 , fs = require('fs')
-, config = require('./config');
+, config = require('./config.json');
 
 mongoose = require('mongoose');
 
@@ -24,11 +24,11 @@ mongoose.connect('mongodb://localhost/todo', function(err){
 var app = express();
  
 app.configure(function(){
-    app.set('port', process.env.PORT || config['Default']['port']);
-    app.set('views', config['Default']['views']);
-    app.set('view engine', config['Default']['engine']);
+    app.set('port', process.env.PORT || config.Default.port);
+    app.set('views', __dirname + config.Default.views);
+    app.set('view engine', config.Default.engine);
     app.use(express.favicon());
-    app.use(express.logger(config['Default']['logger_mode']));
+    app.use(express.logger(config.Default.logger_mode));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
